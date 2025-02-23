@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+    ::selection {
+        @apply bg-brand-500/30 text-white;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    ::-webkit-scrollbar {
+        @apply w-2;
+    }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    ::-webkit-scrollbar-track {
+        @apply bg-dark-200;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-brand-500/50 rounded-full hover:bg-brand-500;
+    }
 }
